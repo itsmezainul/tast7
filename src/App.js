@@ -1,25 +1,18 @@
-import logo from './logo.svg';
-import './App.css';
+import { Route, Routes } from "react-router-dom";
+import AppBar from "./Components/AppBar";
+import FeaturePage from "./Components/FeaturePage";
+import PricingPage from "./Components/PricingPage";
+import Footer from "./Components/Footer";
 
-function App() {
+export default function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <AppBar />
+      <Routes>
+        <Route path="/" element={<FeaturePage />}></Route>
+        <Route path="/pricing" element={<PricingPage />}></Route>
+      </Routes>
+      <Footer />
     </div>
   );
 }
-
-export default App;
